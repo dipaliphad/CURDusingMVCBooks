@@ -1,0 +1,45 @@
+﻿@model CURDusingMVCBooks.DAL.books
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h3>Add new books</h3>
+
+@using(Html.BeginForm())
+{
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Publisher_Name" class="control-label"></label>
+                <input asp-for="Publisher_Name" class="form-control" />
+                <span asp-validation-for="Publisher_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="booksPrice" class="control-label"></label>
+                <input asp-for="booksPrice" class="form-control" />
+                <span asp-validation-for="booksPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+}
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

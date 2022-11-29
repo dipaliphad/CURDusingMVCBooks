@@ -1,0 +1,35 @@
+﻿@using CURDusingMVCBooks.DAL
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h3>books List</h3>
+
+<p>
+    @Html.ActionLink("Add books1","Create","books")
+</p>
+<table class="table table-bordered">
+<tr>
+    <th>books1 Id</th>
+    <th>books1 Name</th>
+    <th>Publisher_Name</th>
+    <th>booksPrice</th>
+    <th>Action</th>
+</tr>
+@foreach (books item in ViewBag.booksList)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Publisher_Name</td>
+            <td>@item.booksPrice</td>
+            <td>
+                @Html.ActionLink("Edit","Edit",new {@id=item.Id}) | 
+                @Html.ActionLink("Delete","Delete",new {@id=item.Id}) | 
+                @Html.ActionLink("View","Details",new {@id=item.Id}) |
+               
+            </td>
+        </tr>
+    }
+</table>
